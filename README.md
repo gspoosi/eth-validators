@@ -1,7 +1,7 @@
 # eth-validator
 
 
-##Docker
+## Docker
 ```
 yum update -y
 wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker.repo
@@ -11,7 +11,7 @@ systemctl enable docker
 ```
 
 
-##Firewall
+## Firewall
 ```
 yum install firewalld -y 
 firewall-cmd --state
@@ -19,7 +19,7 @@ systemctl start firewalld
 systemctl enable firewalld
 ```
 
-##Configure Firewall
+## Configure Firewall
 ```
 firewall-cmd --permanent --add-port=2376/tcp
 firewall-cmd --permanent --add-port=2377/tcp
