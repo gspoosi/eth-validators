@@ -48,3 +48,9 @@ Become a manager:
 ```
 docker swarm join-token manager
 ```
+### Docker Commands
+```
+[root@nova01 ~]# docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+o31hvn1sw5nfdzcg2uvztwylj *   nova01              Ready               Active              Leader              19.03.9
+```
