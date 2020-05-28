@@ -35,6 +35,47 @@ firewall-cmd --reload
 systemctl restart docker
 ```
 
+## Init Docker Swarm
 ```
 docker swarm init --advertise-addr 10.13.37.2
 ```
+
+Become a worker:
+```
+docker swarm join --token XXXXXXX 10.13.37.2:2377
+```
+Become a manager:
+```
+docker swarm join-token manager
+```
+### Docker Commands
+```
+[root@nova01 ~]# docker node ls
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+o31hvn1sw5nfdzcg2uvztwylj *   nova01              Ready               Active              Leader              19.03.9
+
+[root@nova01 ~]# docker info
+...
+
+```
+Create new join-token:
+```
+docker swarm join-token manager -q
+```
+
+Create own registry:
+```
+docker service create --name registry --publish published=5000,target=5000 registry:2
+```
+
+In docker compose:
+```
+version: '3'
+
+services:
+  web:
+    image: 127.0.0.1:5000/XXXX
+    build: .
+    ports:
+      - "8000:8000"
+ ```
