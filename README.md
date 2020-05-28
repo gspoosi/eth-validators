@@ -28,6 +28,9 @@ firewall-cmd --permanent --add-port=80/tcp
 firewall-cmd --permanent --add-port=7946/udp
 firewall-cmd --permanent --add-port=4789/udp
 firewall-cmd --permanent --add-port=22/tcp
+
+firewall-cmd --zone=zone-name --change-interface=<interface-name>
+
 ```
 
 ```
