@@ -79,3 +79,7 @@ services:
     ports:
       - "8000:8000"
  ```
+Run geth:
+```
+docker stack deploy --compose-file docker-compose.yaml geth
+```
