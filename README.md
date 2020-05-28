@@ -35,6 +35,16 @@ firewall-cmd --reload
 systemctl restart docker
 ```
 
+## Init Docker Swarm
 ```
 docker swarm init --advertise-addr 10.13.37.2
+```
+
+Become a worker:
+```
+docker swarm join --token XXXXXXX 10.13.37.2:2377
+```
+Become a manager:
+```
+docker swarm join-token manager
 ```
