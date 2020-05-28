@@ -18,7 +18,7 @@ services:
                         - 30303:30303/tcp
                         - 30303:30303/udp
                 volumes:
-                        - ./geth:/root/.ethereum
+                        - /opt/geth/data:/root/.ethereum
                 <<: *logging
         beacon:
                 container_name: beacon-chain
